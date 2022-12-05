@@ -17,4 +17,9 @@ def describe_temperature(value)
     # "The temperature outside is #{value}"
 end
 
-puts describe_temperature(85)
+def divide(num, den)
+    num.to_f / den
+end
+
+# puts describe_temperature(85)
+puts divide(85, 3)
