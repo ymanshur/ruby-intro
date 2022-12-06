@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class ProjectManager
+# The member (of Project) class
+class Member
   attr_accessor :name, :salary
 
   def initialize(name, salary)
@@ -8,61 +9,37 @@ class ProjectManager
     @salary = salary
   end
 
+  def day_rate
+    salary.to_f / 210 # number days of the year
+  end
+
+  def to_s
+    "#{role} #{@name} $#{@salary}"
+  end
+end
+
+# The project manager member (of Project) class
+class ProjectManager < Member
   def role
     'Project Manager'
   end
-
-  def day_rate
-    salary.to_f / 210 # number days of the year
-  end
-
-  def to_s
-    "#{role} #{@name} $#{@salary}"
-  end
 end
 
-class Developer
-  attr_accessor :name, :salary
-
-  def initialize(name, salary)
-    @name = name
-    @salary = salary
-  end
-
+# The developer member (of Project) class
+class Developer < Member
   def role
     'Developer'
   end
-
-  def day_rate
-    salary.to_f / 210 # number days of the year
-  end
-
-  def to_s
-    "#{role} #{@name} $#{@salary}"
-  end
 end
 
-class Designer
-  attr_accessor :name, :salary
-
-  def initialize(name, salary)
-    @name = name
-    @salary = salary
-  end
-
+# The designer member (of Project) class
+class Designer < Member
   def role
     'Designer'
   end
-
-  def day_rate
-    salary.to_f / 210 # number days of the year
-  end
-
-  def to_s
-    "#{role} #{@name} $#{@salary}"
-  end
 end
 
+# The project class
 class Project
   attr_accessor :name, :budget
   attr_reader :members
