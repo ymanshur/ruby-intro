@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
+# The user class
 class User
   attr_accessor :email, :age
 
   def initialize(name, email, age)
-    self.name = name
+    self.name = name # @name is instance variable
     self.email = email
     self.age = age
   end
