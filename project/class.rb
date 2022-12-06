@@ -1,13 +1,21 @@
 # frozen_string_literal: true
 
 class User
-  attr_accessor :name, :email, :age
+  attr_accessor :email, :age
 
   def initialize(name, email, age)
     self.name = name
     self.email = email
     self.age = age
   end
+
+  # Setter
+  def name=(name)
+    @name = name.downcase
+  end
+
+  # Getter
+  attr_reader :name
 
   # need bang '!' because the method actually changing something about the object
   def celebrate_birthday!
@@ -26,4 +34,5 @@ jill = User.new('Jill', 'jill@example.com', 40)
 p jill
 
 jill.celebrate_birthday!
-p jill.age
+puts jill.age
+puts jill.name
