@@ -8,6 +8,12 @@ class User
     self.email = email
     self.age = age
   end
+
+  # need bang '!' because the method actually changing something about the object
+  def celebrate_birthday!
+    puts 'Happy Birthday!'
+    self.age += 1
+  end
 end
 
 # mickey = User.new
@@ -18,3 +24,6 @@ end
 
 jill = User.new('Jill', 'jill@example.com', 40)
 p jill
+
+jill.celebrate_birthday!
+p jill.age
