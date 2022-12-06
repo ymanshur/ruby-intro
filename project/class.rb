@@ -9,6 +9,14 @@ class User
     self.age = age
   end
 
+  def to_s
+    "<#{@email}>"
+  end
+
+  def inspect
+    "#{@name}, #{@age}, #{@email}"
+  end
+
   # Setter
   def name=(name)
     @name = name.downcase
@@ -34,5 +42,4 @@ jill = User.new('Jill', 'jill@example.com', 40)
 p jill
 
 jill.celebrate_birthday!
-puts jill.age
-puts jill.name
+puts jill
