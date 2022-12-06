@@ -15,6 +15,30 @@ WORDS = input.split(/\s+|\.|,/).reject(&:empty?) # This uses a Regular Expressio
 #
 # Your code starts here
 
-p WORDS
-p WORDS.sort
-p WORDS.reverse
+def display(array)
+  array.each do |el|
+    puts el
+  end
+end
+
+display(WORDS)
+
+puts '=========================='
+
+# WORDS.sort.each do |word|
+#   p word
+# end
+
+puts "\n\nSorted\n"
+puts '--------------------------'
+WORDS.sort!
+display(WORDS)
+
+puts "\n\nSorted Reverse\n"
+puts '--------------------------'
+display(WORDS.reverse)
+
+WORDS.delete_at(0)
+WORDS << 'cat'
+
+display(WORDS.sort)
